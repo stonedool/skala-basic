@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정찬혁의 프로필</title>
+</head>
+<body>
+    <header >
+    <h3>정찬혁의 프로필</h3>
+    </header>
+    <main>
+        <div class="upper">
+    <div class="leftImage">
+        <img src="profile.jpg" alt="사진" width="150" height="200">
+    </div>
+
+    <hr class="vertical-line">
+
+    <div class="rightText">
+        <h4>이름: 정찬혁</h4>
+        <h4>생년월일: 2001년 1월 12일</h4>
+        <h4>취미: 바이올린</h4>
+        <h4>중앙대학교 소프트웨어학부</h4>
+    </div>
+</div>
+
+<style>
+    .upper {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px; /* 요소 사이 최소 간격 */
+    }
+
+    .vertical-line {
+        width: 1px;
+        height: 180px;
+        background-color: black;
+        border: none;
+        margin: 0 10px; /* 좌우 여백만 조금 */
+    }
+
+    .rightText h4 {
+        margin: 5px 0; /* h4 기본 여백 줄이기 */
+    }
+</style>
+        <br>
+        <hr>
+        <div class="lower">
+            <div class="table">
+                <h3>연대기</h3>
+                <table border="1">
+                    <tr>
+                        <th>연도</th>
+                        <th>내용</th>
+                    </tr>
+                    <tr>
+                        <td>2001.01.12.</td>
+                        <td>출생(경기도 남양주시 화도읍)</td>
+                    </tr>
+                    <tr>
+                        <td>2008~2013</td>
+                        <td>초등학교(칭다오청운한국학교)</td>
+                    </tr>
+                    <tr>
+                        <td>2014~2017</td>
+                        <td>중학교(칭다오청운한국학교)</td>
+                    </tr>
+                    <tr>
+                        <td>2017~2020</td>
+                        <td>고등학교(칭다오청운한국학교)</td>
+                    </tr>
+                    <tr>
+                        <td>2020~2025</td>
+                        <td>대학교(중앙대학교 소프트웨어학부)</td>
+                    </tr>
+                    <tr>
+                        <td>now</td>
+                        <td>SKALA Cloud 1기 수강</td>
+                    </tr>
+                    <tr>
+                        <td>future</td>
+                        <td>대한민국을 빛낸 100명의 위인 선정</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="기술스택">
+                <br>
+                <h3>기술스택</h3>
+                <hr>
+                <div class="tech-stack">
+                    <div class="lang">Language: 
+                        <ul><li>JAVA</li><li>JavaScript</li><li>C++</li><li>Python</li></ul>
+                    </div>
+                    <div class="DB">DB: 
+                        <ul><li>OracleDB</li><li>mySQL</li></ul>
+                    </div>
+                    <div class="framework">Framework: 
+                        <ul><li>Spring</li><li>React</li><li>nodejs</li></ul>
+                    </div>
+                </div>
+                <style>
+                    .tech-stack {
+                        display: flex;
+                        gap: 20px;
+                    }
+                    /* .tech-stack > div {
+                        flex: 1;
+                    }
+                    .tech-stack ul {
+                        display: flex;
+                        gap: 10px;
+                        list-style: none;
+                        padding: 0;
+                    } */
+                </style>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

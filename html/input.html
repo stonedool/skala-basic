@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러가지 입력 유형</title>
+</head>
+<body>
+    <h1>여러가지 입력 유형</h1>
+    <form>
+        <label for="textInput">텍스트입력</label>
+        <input type="text" id="textInput" name="textInput" /><br/>
+
+        <label for="emailInput">이메일입력</label>
+        <input type="email" id="emailInput" name="emailInput" /><br/>
+
+        <label for="passwordInput">비밀번호입력</label>
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+            <input type="password" id="passwordInput" name="passwordInput" />
+            <button type="button" onclick="togglePassword()">👁️</button>
+        </span>
+        <script>
+            function togglePassword() {
+            const input = document.getElementById('passwordInput');
+            input.type = input.type === 'password' ? 'text' : 'password';
+            }
+        </script>
+        <br/>
+
+        <label for="numberInput">숫자입력</label>
+        <input type="number" id="numberInput" name="numberInput" /><br/>
+
+        <label for="dateInput">날짜입력</label>
+        <input type="date" id="dateInput" name="dateInput" /><br/>
+        
+        <select name="fruit">
+            <option value="사과">사과</option>
+            <option value="바나나">바나나</option>
+            <option value="포도">포도</option>
+            <option value="오렌지">오렌지</option>  
+        </select>
+        <br>
+
+        <button type="submit" value="제출하기" >제출하기</button>
+        <button type="reset" value="초기화하기" >초기화하기</button>
+    </form>
+</body>
+</html>

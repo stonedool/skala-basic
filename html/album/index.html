@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행사진</title>
+</head>
+<body>
+    <h1>나의 여행사진 앨범</h1>
+    <audio controls>
+        <source src="travel-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <hr>
+
+    <p>화면 크기에 따라 다른 사진이 보입니다.</p>
+
+
+    <figure>
+        <picture>
+            <source srcset="./media/sophia.png" media="(max-width: 600px)">
+            <source srcset="./media/church.jpg" media="(min-width: 601px)">
+            <img src="./media/tower.jpg" alt="교회 사진" width="50%">
+        </picture>
+        <figcaption><h2>피렌체 대성당</h2></figcaption>
+    </figure>
+
+    <!-- 사진 2 -->
+    <figure>
+        <picture>
+            <source srcset="./media/church.jpg" media="(max-width: 600px)">
+            <source srcset="./media/tower.jpg" media="(min-width: 601px)">
+            <img src="./media/sophia.png" alt="소피아 성당" width="50%">
+        </picture>
+        <figcaption><h2>소피아 성당</h2></figcaption>
+    </figure>
+
+    <!-- 사진 3 -->
+    <figure>
+        <picture>
+            <source srcset="./media/tower.jpg" media="(max-width: 600px)">
+            <source srcset="./media/church.jpg" media="(min-width: 601px)">
+            <img src="./media/tower.jpg" alt="타워 전망" width="50%">
+        </picture>
+        <figcaption><h2>남산타워</h2></figcaption>
+    </figure>
+</body>
+</html>
