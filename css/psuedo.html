@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 예제</title>
+
+    <style>
+        .box {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .box:hover {
+            text-decoration: underline;
+            color: red;
+            font-size: 24px;
+        }
+
+        p::before {
+            content: "before ";
+            color: yellow;
+        }
+        p::after {
+            content: " after";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>가상 클래스 예제</h1>
+    <box class="box"><p>이것은 박스안에 있는 p태그입니다.</p>이것은 박스입니다.</box>
+</body>
+</html>

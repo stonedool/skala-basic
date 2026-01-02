@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+
+    <style>
+        /* 1️⃣ 기본(화이트) 테마 변수 */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --card-bg: #f2f2f2;
+            --accent-color: #4caf50;
+        }
+
+        /* 2️⃣ 다크 테마 변수 */
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --card-bg: #1e1e1e;
+            --accent-color: #90caf9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+            padding: 30px;
+        }
+
+        .theme-selector {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        label {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-selector">
+        <label>
+            <input type="radio" name="theme" value="light" checked>
+            화이트 테마
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="dark">
+            다크 테마
+        </label>
+    </div>
+
+    <div class="card">
+        <h2>테마 전환 예제</h2>
+        <p>
+            라디오 버튼을 클릭하면<br>
+            CSS 변수 값이 바뀌면서 테마가 전환됩니다.
+        </p>
+    </div>
+
+    <script>
+        const radios = document.querySelectorAll('input[name="theme"]');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'dark') {
+                    document.body.classList.add('dark');
+                } else {
+                    document.body.classList.remove('dark');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

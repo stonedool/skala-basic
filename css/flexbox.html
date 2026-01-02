@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox 중앙 정렬</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+
+      /* 중앙 정렬 핵심 */
+      justify-content: end; /* 가로 중앙 */
+      align-items: center;     /* 세로 중앙 */
+      border: 10px solid black;
+      padding: 10px 1px;
+      height: 100%;           /* 화면 전체 높이 */
+      gap: 20px;               /* 박스 간격 */
+      background-color: peru;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: steelblue;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+
+      /* 박스 안 텍스트도 중앙 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box:nth-child(2) {
+      background-color: tomato;
+    }
+
+    .box:nth-child(3) {
+      background-color: seagreen;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 50px;
+    }
+    .grid-box {
+      background-color: steelblue;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      height: 100px;
+
+      /* 박스 안 텍스트도 중앙 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h1> grid 예제</h1> 
+  <div class="grid-container">
+    <div class="grid-box">1</div>
+    <div class="grid-box">2</div>
+    <div class="grid-box">3</div>
+    <div class="grid-box">4</div>
+    <div class="grid-box">5</div>
+    <div class="grid-box">6</div>
+    <div class="grid-box">7</div>
+    <div class="grid-box">8</div>
+    <div class="grid-box">9</div>
+    <div class="grid-box">10</div>
+    <div class="grid-box">11</div>
+    <div class="grid-box">12</div>
+  </div>
+
+</body>
+</html>

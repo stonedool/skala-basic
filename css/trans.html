@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trans</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            background-color: yellow;
+        }
+
+        .box.rotate {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        hover me! 
+    </div>
+
+    <button onclick="toggleRotate()">Rotate</button>
+
+    <script>
+        function toggleRotate() {
+            const box = document.querySelector('.box');
+            box.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Effect</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        .button {
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: grab;
+        }
+
+        .button:active {
+            cursor: grabbing;
+            opacity: 0.7;
+        }
+
+        /* 드롭 영역 */
+        p {
+            margin-top: 60px;
+            padding: 40px;
+            border: 3px dashed gray;
+            font-size: 22px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* 드래그 중 올라왔을 때 */
+        p.drag-over {
+            background-color: #e0ffe0;
+            border-color: green;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        /* 드롭 성공 */
+        p.success {
+            background-color: lightgreen;
+            border-color: darkgreen;
+            color: black;
+            font-weight: bold;
+            animation: pop 0.4s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button" draggable="true">드래그하세요</button>
+
+    <p id="dropZone">여기에 버튼을 드롭하세요</p>
+
+    <script>
+        const button = document.querySelector(".button");
+        const dropZone = document.getElementById("dropZone");
+
+        // 드래그 시작
+        button.addEventListener("dragstart", () => {
+            button.style.opacity = "0.5";
+        });
+
+        button.addEventListener("dragend", () => {
+            button.style.opacity = "1";
+        });
+
+        // 드롭 영역 위에 올라왔을 때
+        dropZone.addEventListener("dragover", (e) => {
+            e.preventDefault(); // 필수
+            dropZone.classList.add("drag-over");
+        });
+
+        dropZone.addEventListener("dragleave", () => {
+            dropZone.classList.remove("drag-over");
+        });
+
+        // 드롭 성공
+        dropZone.addEventListener("drop", () => {
+            dropZone.classList.remove("drag-over");
+            dropZone.classList.add("success");
+            dropZone.textContent = "✅ 버튼이 성공적으로 드롭되었습니다!";
+        });
+    </script>
+
+</body>
+</html>

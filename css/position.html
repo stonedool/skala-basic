@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS position 예제</title>
+  <style>
+    body {
+      height: 2000px; /* 스크롤 확인용 */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      border: 2px solid #333;
+      margin: 40px;
+      padding: 20px;
+      height: 300px;
+      position: relative; /* absolute 기준 */
+    }
+
+    .box {
+      width: 150px;
+      height: 80px;
+      color: #fff;
+      text-align: center;
+      line-height: 80px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* 1. static (기본값) */
+    .static {
+      position: static;
+      background: gray;
+    }
+
+    /* 2. relative */
+    .relative {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background: green;
+    }
+
+    /* 3. absolute */
+    .absolute {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: red;
+    }
+
+    /* 4. fixed */
+    .fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: blue;
+    }
+
+    /* 5. sticky */
+    .sticky {
+      position: sticky;
+      top: 0;
+      background: purple;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box static">static</div>
+
+  <div class="box sticky">sticky</div>
+
+  <div class="container">
+    <div class="box relative">relative</div>
+    <div class="box absolute">absolute</div>
+    absolute는 이 container 기준
+  </div>
+
+  <div class="box fixed">fixed</div>
+
+</body>
+</html>
