@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>홍길동 변신</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    const input = prompt("변신할 대상을 입력하세요");
+    const resultEl = document.getElementById("result");
+
+    // 입력값이 없거나 공백인 경우
+    if (!input || input.trim() === "") {
+      resultEl.textContent = "연기처럼 사라졌습니다.";
+    } else {
+      resultEl.textContent = `홍길동 변신 ${input}!`;
+    }
+  </script>
+
+</body>
+</html>
