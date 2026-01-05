@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>식량 분배 결과</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>식량 분배 결과</h2>
+
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>받은 식량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JS로 행 추가 -->
+        </tbody>
+    </table>
+
+    <script>
+        // 식량 목록
+        const foods = [
+            "쌀", "보리", "콩", "감자", "양파",
+            "마늘", "배추", "무", "고구마", "호박"
+        ];
+
+        // 사람 목록
+        const poors = ["철수", "영희", "민수"];
+
+        // 결과 배열 초기화
+        const results = poors.map(name => ({
+            name,
+            items: []
+        }));
+
+        // 음식 분배 (순환 방식)
+        foods.forEach((food, index) => {
+            const personIndex = index % poors.length;
+            results[personIndex].items.push(food);
+        });
+
+        // 콘솔 출력
+        console.table(
+            results.map(r => ({
+                name: r.name,
+                items: r.items.join(", ")
+            }))
+        );
+
+        // HTML 테이블 출력
+        const tbody = document.querySelector("#resultTable tbody");
+
+        results.forEach(result => {
+            const tr = document.createElement("tr");
+
+            const nameTd = document.createElement("td");
+            nameTd.textContent = result.name;
+
+            const itemsTd = document.createElement("td");
+            itemsTd.textContent = result.items.join(", ");
+
+            tr.appendChild(nameTd);
+            tr.appendChild(itemsTd);
+            tbody.appendChild(tr);
+        });
+    </script>
+</body>
+
+</html>
